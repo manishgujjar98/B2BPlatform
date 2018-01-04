@@ -1,0 +1,12 @@
+///////////   for Status in address fields /////////////
+
+status    : 0 : Deleted address
+            1 : Active address(to be displayed on the updated status)
+            2 : De-active address
+
+
+//////////// for status in users fields //////////////
+
+status    : 0 : Deleted user
+            1 : Registerted user
+            2 : pending User

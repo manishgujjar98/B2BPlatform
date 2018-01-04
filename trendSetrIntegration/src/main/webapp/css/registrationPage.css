@@ -1,0 +1,336 @@
+/* login page */
+
+.login-page .title-head {
+    text-transform: capitalize;
+    font-weight: bolder;
+    text-align: center;
+    color: white;
+}
+
+.login-page .panel {
+    border-radius: 10px;
+}
+
+.login-page .contact {
+    -webkit-transform: translate(0%, 5%);
+    transform: translate(0%, 5%);
+    border-radius: 10px;
+}
+
+.login-page .form-control {
+    background: #EAEAEA;
+    border: 1px solid #000;
+    trasition: all .3s ease-out;
+}
+
+.login-page .form-control:focus {
+    border: 1px solid #fff;
+    box-shadow: none;
+    background: #EAEAEA;
+    -webkit-transition: all .3s ease-in;
+    transition: all .3s ease-in;
+}
+
+.login-page .form-control:hover {
+    border: 1px solid #fff;
+    -webkit-transition: all .3s ease-in;
+    transition: all .3s ease-in;
+}
+
+.login-page input::-webkit-input-placeholder {
+    color: #AFAFAF;
+}
+
+.login-page .log-in {
+    background-color: #E65757;
+    color: white;
+    border: none;
+    cursor: pointer;
+    width: 80px;
+}
+
+.login-page .get-started {
+    background-color: #E65757;
+    font-size: 20px;
+    color: white;
+    border: none;
+    cursor: pointer;
+    width: 150px;
+}
+
+
+/* Change styles for span and cancel button on extra small screens */
+
+@media screen and (max-width:768px) {
+    .login-page .title-head {
+        font-size: 26px;
+    }
+}
+
+@media screen and (max-width:320px) {
+    .login-page .title-head {
+        font-size: 26px;
+    }
+}
+
+
+/* ./login page */
+
+
+/* Registration page */
+
+.registration-page {
+    background-color: #DEE0E3;
+}
+
+.registration-page a {
+    text-decoration: none;
+}
+
+.registration-page h2 {
+    font-weight: 500;
+    font-size: 26px;
+    max-width: 100%;
+    text-align: center;
+}
+
+.registration-page h6 {
+    font-weight: 100;
+}
+
+.registration-page .mt-25 {
+    margin-top: -25px;
+}
+
+.registration-page .login,
+.registration-page .login a {
+    float: right;
+    margin-top: -2px;
+    font-size: 16px;
+    text-decoration: none;
+    color: black;
+}
+
+.registration-page .login a:hover {
+    color: grey;
+}
+
+.registration-page form {
+    border: 1px;
+    width: 400px;
+    height: 100%;
+    max-width: 100%;
+    align: center;
+}
+
+.registration-page .form-control {
+    trasition: all .3s ease-out;
+    width: 100%;
+    height: 40px;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    box-sizing: border-box;
+    margin-bottom: -10px;
+}
+
+.registration-page .reg-next {
+    background-color: #E85757;
+    color: white;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+    height: 50px;
+    font-size: 26px;
+}
+
+.registration-page .container {
+    padding: 16px;
+}
+
+.registration-page .social-icons a {
+    padding-right: 10px;
+}
+
+
+/* Change styles for span and cancel button on extra small screens */
+
+@media screen and (max-width: 768px) {
+    .registration-page .have_an_account {
+        display: none;
+    }
+    .registration-page .lname {
+        margin-top: 20px;
+    }
+}
+
+
+/* ./Registration page */
+
+
+/* Gender Selection page */
+
+.gender-selection-page {
+    background-color: #DEE0E3;
+}
+
+.gender-selection-page a {
+    text-decoration: none;
+}
+
+.gender-selection-page h2 {
+    font-weight: 500;
+    font-size: 26px;
+    max-width: 100%;
+    text-align: center;
+}
+
+.gender-selection-page h6 {
+    font-weight: 100;
+}
+
+.gender-selection-page .mt-25 {
+    margin-top: -25px;
+}
+
+.gender-selection-page .login,
+.gender-selection-page .login a {
+    float: right;
+    margin-top: -2px;
+    font-size: 16px;
+    text-decoration: none;
+    color: black;
+}
+
+.gender-selection-page .login a:hover {
+    color: grey;
+}
+
+.gender-selection-page .panel {
+    background-color: #f5f2f1;
+}
+
+.gender-selection-page .next {
+    background-color: #E85757;
+    color: white;
+    width: 300px;
+    height: 50px;
+    border-radius: 10px;
+    border: none;
+    cursor: pointer;
+    border: 1px;
+    font-size:22px;
+}
+
+.gender-selection-page .gender_selection {
+    width: 150px;
+    height: 150px;
+    display: inline-block;
+}
+
+.gender-selection-page .gender-text {
+    width: 200px;
+}
+
+.gender-selection-page .contact {
+    -webkit-transform: translate(0%, 15%);
+    transform: translate(0%, 15%);
+}
+
+
+/* Change styles for span and cancel button on extra small screens */
+
+@media screen and (max-width: 768px) {
+    .gender-selection-page legend h2 {
+        font-size: 20px;
+    }
+    .gender-selection-page .have-an-account {
+        display: none;
+    }
+    .mt20 {
+        margin-top: 20px;
+    }
+    .gender-selection-page .img-circle {
+        width: 100px;
+        height: 100px;
+        display: inline-block;
+    }
+    .gender-selection-page .gender-text {
+        width: 140px;
+    }
+}
+
+
+/* ./Gender Selection page */
+
+
+/* Social Connect page */
+
+.social-connect-page {
+    background-color: #DEE0E3;
+}
+
+.social-connect-page a {
+    text-decoration: none;
+}
+
+.social-connect-page h2 {
+    font-weight: 500;
+    font-size: 26px;
+    max-width: 100%;
+    text-align: center;
+}
+
+.social-connect-page h6 {
+    font-weight: 100;
+}
+
+.social-connect-page .mt-25 {
+    margin-top: -25px;
+}
+
+.social-connect-page .login,
+.social-connect-page .login a {
+    float: right;
+    margin-top: -2px;
+    font-size: 16px;
+    text-decoration: none;
+    color: black;
+}
+
+.social-connect-page.login a:hover {
+    color: grey;
+}
+
+.social-connect-page .panel {
+    background-color: #f5f2f1;
+}
+
+.social-connect-page .text {
+    width: 60%;
+    margin-bottom: 30px;
+}
+
+.social-connect-page .media_selection {
+    margin-right: 20px;
+}
+
+.social-connect-page .btn-sample {
+    background-color: #E85757;
+    color: white;
+    border-radius: 10px;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+    width: 300px;
+    border: 1px;
+    font-size:22px;
+}
+
+.social-connect-page .contact {
+    -webkit-transform: translate(0%, 15%);
+    transform: translate(0%, 15%);
+}

@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html>
+<title>B2B Dashboard</title>
+<head>
+<!-- include admin navigation -->
+<%@include file="merchantStyles.jsp"%>
+<link rel="stylesheet"
+	href="../css/bootstrap-datetimepicker.css">
+<link rel="stylesheet"
+	href="../css/bootstrap-datetimepicker.min.css">
+<link rel="stylesheet"
+	href="../css/bootstrap-datetimepicker-standalone.css">
+
+<style>
+.admin-header {
+	background-color: black;
+}
+
+html, body {
+	font-family: 'Lato', sans-serif;
+}
+
+.logo-container h1 a {
+	color: white;
+	text-decoration: none;
+}
+
+.mdl-layout__header .mdl-layout__drawer-button:active {
+	background-color: transparent !important;
+	box-shadow: none !important;
+	opacity: .5;
+}
+
+.mdl-layout__header {
+	background-color: transparent !important;
+	box-shadow: none !important;
+}
+
+.b2b-header-margin {
+	position: relative;
+	top: 110px;
+}
+
+.flex-container {
+	padding: 0;
+	margin: 0;
+	display: -webkit-box;
+	display: -moz-box;
+	display: -ms-flexbox;
+	display: -webkit-flex;
+	display: flex;
+	justify-content: space-between;
+}
+
+.flex-item {
+	
+}
+
+h2 {
+	font-size: 16px;
+}
+
+.order-header img {
+	width: 50px;
+}
+
+.order-info img {
+	width: 60px;
+}
+
+.order-total, .order-total:hover {
+	text-decoration: underline;
+	color: grey;
+}
+</style>
+</head>
+
+<body>
+<input type="hidden" id="hiddenUID"
+		value="<%=session.getAttribute("userId")%>">
+		<input type="hidden" id="hiddenOID"
+		value="<%=request.getParameter("orderID")%>">
+	<!-- header -->
+	<div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
+		<header class="mdl-layout__header">
+			<div class="mdl-layout__header-row "
+				style="background: #000000; border-bottom: solid #FFFFFF;">
+				<span class="mdl-layout-title"
+					style="margin-left: auto; margin-right: auto; display: block; position: absolute; width: 100%; left: 0; top: 0; text-align: center; padding-top: 25px;">TrendSetr</span>
+				<div class="mdl-layout-spacer"></div>
+				<nav class="mdl-navigation mdl-layout__header--transparent">
+					<button id="demo-menu-lower-right"
+						class="mdl-button mdl-js-button mdl-button--icon">
+						<i> <a class="mdl-navigation__link" href="#"
+							style="width: 32px; height: 32px; background-color: #FFFFFF;"></a></i>
+					</button>
+					<ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu "
+						for="demo-menu-lower-right" style="top: 15px">
+						<li style="margin-left: 35px;">
+							<div
+								style="height: 100px; width: 100px; border-radius: 50%; background-color: #7D7D7D;"></div>
+						</li>
+						<li style="text-align: center; color: #000000; font-weight: bold;">Merchant
+							Name</li>
+						<li class="mdl-menu__item" style="text-align: center;">View
+							TrendSetr Profile</li>
+						<li class="mdl-menu__item" style="text-align: center;">Sign
+							Out</li>
+					</ul>
+				</nav>
+			</div>
+		</header>
+		<div class="mdl-layout__drawer"
+			style="overflow: hidden; background: rgba(0, 0, 0, 0.75); border: none;">
+			<span class="mdl-layout-title" style="top: 85px; right: -25px;"><div
+					style="height: 100px; width: 100px; border-radius: 50%; background-color: #7D7D7D;"></div></span>
+			<span class="mdl-layout-title" style="top: 85px; color: #FFFFFF">Merchant
+				Name</span>
+			<nav class="mdl-navigation" style="padding-top: 86px;">
+				<a class="mdl-navigation__link"
+					href="/trendSetrIntegration/merchant/merchantDasboard.jsp">Dashboard</a>
+				<a class="mdl-navigation__link"
+					href="/trendSetrIntegration/merchant/productManagement.jsp">Product
+					Management</a> <a class="mdl-navigation__link"
+					href="/trendSetrIntegration/merchant/orderManagement.jsp">Order
+					Management</a> <a class="mdl-navigation__link"
+					href="/trendSetrIntegration/merchant/featuredAdspace.jsp">Ad
+					Management</a> <a class="mdl-navigation__link"
+					href="/trendSetrIntegration/merchant/accountSettings.jsp">Account
+					Settings</a>
+			</nav>
+			<a class="mdl-navigation__link text-center mt60"
+				href="/LoginController"
+				style="text-decoration: none; color: white; font-size: 20px;">Sign
+				Out</a>
+		</div>
+	</div>
+	<!--header -->
+	<!-- user settings -->
+	<section class="col-xs-12 b2b-header-margin" id="order-detail">
+		<section class="row">
+			<section class="container">
+				<section class="row">
+					<!-- user settings content -->
+					<div class="order-history-invoice-div mb20">
+						<h4 class="pull-left">Order Detail</h4>
+						<h4 class="pull-right">
+							<a href="orderManagement.jsp" class="btn btn-sample"
+								style="background-color: #315CF2; color: white; font-size: 16px; padding: 5px 35px 5px 35px;">Back</a>
+						</h4>
+						<div class="clearfix"></div>
+					</div>
+					<section class="col-sm-12"
+						style="background-color: #D8D8D8; padding: 30px 30px 80px 30px;">
+						<div class="order-header" style="margin-bottom: 10px;">
+							<img src="/trendSetrIntegration/images/mike2.png"
+								alt="orderimage"> <span>Customer Name</span>
+						</div>
+						<section class="col-sm-8 settings-content invoice"
+							style="background-color: white;">
+
+							<section class="row">
+
+								<div class="eachorderdetail">
+									<form name="orderdetailform" action="" method="post">
+
+										<!-- order-details -->
+										<div class="order-details">
+											<div class="order-info">
+												<span class="pull-left" style="padding: 20px 0 0 20px;"><img
+													class="img" src="/trendSetrIntegration/images/mike2.png"
+													alt="info"><span class="item-details "> &nbsp;
+														Kith NYC Tank Top</span> </span> <span
+													class="price pull-right text-center"
+													style="padding: 20px 20px 0 0;"> <a
+													class="order-total" href="">Order Total</a><br>$74.99
+												</span>
+											</div>
+
+											<div class="clearfix"
+												style="border-bottom: 1px solid #DDDDDD; padding-bottom: 10px;"></div>
+											<div class="shipping-info">
+												<h3 class="order-date" style="padding: 10px 0 0 20px;">
+													<b>Order Placed: January 31, 2017</b>
+												</h3>
+												<div class="col-sm-6" style="padding-left: 15px;">
+													<br>
+													<h2 class="label-header">
+														<b>Shipping Information</b>
+													</h2>
+													Address: <br> City &nbsp; &nbsp; State &nbsp; &nbsp;
+													Zip <br>
+													<h2 class="label-header mt20">
+														<b>Payment Method :</b>
+													</h2>
+													Approved
+												</div>
+												<div class="col-sm-6" style="background-color: white;">
+													<br>
+													<h2 class="label-header">
+														<b>Order Summary</b>
+													</h2>
+													<table class="table table-condensed">
+														<tr>
+															<td>item(s) Subtotal:</td>
+															<td align="right">$74.50</td>
+														</tr>
+														<tr>
+															<td>Shipping & Handling:</td>
+															<td align="right">$3.99</td>
+														</tr>
+														<tr>
+															<td>Total before Tax:</td>
+															<td align="right">$77.99</td>
+														</tr>
+														<tr>
+															<td>Estimated Tax to be collected:</td>
+															<td align="right">$4.5</td>
+														</tr>
+														<tr>
+															<td>Grand Total</td>
+															<td align="right">$89.25</td>
+														</tr>
+													</table>
+												</div>
+											</div>
+										</div>
+										<!-- ./order-details -->
+
+									</form>
+								</div>
+							</section>
+						</section>
+						<!-- ./user settings content -->
+						<!--  user settings menu -->
+						<section class="col-sm-4" id="shipping-container">
+							<section class=""
+								style="background-color: white; padding: 0 0 25px 0;">
+								<div class="text-center" style="font-size: 16px;">
+									<b>TrendSetr Shipping</b>
+								</div>
+								<h2 class="text-center mt20">
+									<b>Pick Up</b>
+								</h2>
+								<div class="container">
+									<div class="row">
+										<div class="col-sm-3 text-center">
+											<div class="form-group mt20">
+												<div class='input-group date' id='datetimepicker5'
+													style="padding-left: 20px;">
+													<input type='text' class="form-control" id='datetimepicker' />
+													<span class="input-group-addon"> <span
+														class="glyphicon glyphicon-calendar"></span>
+													</span>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+								<button class="btn btn-sample pick-up mt20" data-target=""
+									data-dismiss=""
+									style="background-color: #315CF2; color: white; font-size: 16px; margin-left: auto; margin-right: auto; display: block; padding: 5px 70px 5px 70px;">Pick
+									Up</button>
+								<h2 class="text-center mt20 mb20">
+									<b>Drop Off</b>
+								</h2>
+								<button class="btn btn-sample print-label"
+									style="background-color: #315CF2; color: white; font-size: 16px; margin-left: auto; margin-right: auto; display: block; padding: 5px 60px 5px 60px;">Print
+									Label</button>
+								<button class="btn btn-sample nearest-store mt10"
+									style="background-color: white; border: 1px solid black; color: grey; font-size: 12px; margin-left: auto; margin-right: auto; display: block; padding: 10px 25px 10px 25px;">Locate
+									a nearest UPS Store</button>
+
+							</section>
+						</section>
+						<!-- ./ user settings menu -->
+					</section>
+				</section>
+			</section>
+		</section>
+	</section>
+	<!-- ./user settings -->
+	<div class="clearfix"></div>
+	<!-- .gift -->
+	<script src="/trendSetrIntegration/js/jquery.min.js"></script>
+	<script src="/trendSetrIntegration/js/moment.js"></script>
+	<script src="/trendSetrIntegration/js/transition.js"></script>
+	<script src="/trendSetrIntegration/js/collapse.js"></script>
+	<script type="text/javascript"
+		src="/trendSetrIntegration/js/bootstrap.min.js"></script>
+	<script
+		src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.18.1/moment.min.js"></script>
+	<script type="text/javascript"
+		src="/trendSetrIntegration/js/bootstrap-datetimepicker.js"></script>
+	<!-- Material design script -->
+	<script
+		src="https://storage.googleapis.com/code.getmdl.io/1.0.6/material.min.js"></script>
+	<script src="/trendSetrIntegration/js/app.js"></script>
+	<script>
+		$('#datetimepicker').datetimepicker();
+		
+		$(document).ready(function() {
+			alert($("#hiddenOID").val());
+			
+			$.ajax({
+				type : "GET",
+				contentType : "application/json; charset=utf-8",
+				url : "/trendSetr/rest/order/orderInfo/"+$("#hiddenOID").val(),
+				dataType : "json",
+				success : function(responseData, status) {
+					alert("success");
+				},
+				error : function(request, status, error) {
+					//alert("request.." + request);
+					//alert("status.." + status);
+					alert("error.." + error);
+				}
+			});
+		})
+	</script>
+</body>
+
+</html>
